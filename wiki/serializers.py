@@ -12,11 +12,13 @@ class PageSerializer(serializers.ModelSerializer):
             'created',
         )
 
-class PageListSerializer(PageSerializer):
-    pass
-
 
 class PageVersionSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.Page
-        fields = '__all__'
+        model = models.Page.history.model
+        fields = (
+            'history_id',
+            'text',
+            'created',
+            'history_date',
+        )
