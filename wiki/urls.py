@@ -14,5 +14,6 @@ urlpatterns = [
         'page/<int:page>/versions/<int:pk>',
         views.VersionDetailView.as_view()
     ),
+    path('page/<int:page>/versions/<int:pk>/set-current', views.VersionSetView.as_view())
 
 ]
