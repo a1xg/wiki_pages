@@ -12,6 +12,10 @@ class Page(models.Model):
         return str(self.title)
 
     def save_without_historical_record(self, *args, **kwargs):
+        """
+        When downgrading to older versions, additional history
+        records will not be created
+        """
         self.skip_history_when_saving = True
         try:
             ret = self.save(*args, **kwargs)

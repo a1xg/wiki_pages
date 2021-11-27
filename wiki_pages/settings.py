@@ -16,8 +16,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'wiki',
     'simple_history',
+    'wiki',
 ]
 
 MIDDLEWARE = [
@@ -28,7 +28,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # 'simple_history.middleware.HistoryRequestMiddleware',
 ]
 
 ROOT_URLCONF = 'wiki_pages.urls'
@@ -50,7 +49,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'wiki_pages.wsgi.application'
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -58,6 +57,18 @@ DATABASES = {
         'USER': 'wiki_admin',
         'PASSWORD': 'admin',
         'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+
+# docker DB
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'HOST': 'wiki_database',
         'PORT': '5432',
     }
 }
@@ -94,3 +105,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'auth.User'

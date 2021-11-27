@@ -10,7 +10,7 @@ class PageCreateView(generics.CreateAPIView):
 
 
 class PagesListView(generics.ListAPIView):
-    serializer_classes = serializers.PageSerializer
+    serializer_class = serializers.PageSerializer
     queryset = models.Page.objects.all()
 
 
@@ -30,26 +30,29 @@ class VersionsListView(generics.ListAPIView):
         return history
 
 
-class VersionDetailView(generics.RetrieveUpdateDestroyAPIView):
+class VersionDetailView(generics.RetrieveAPIView):
     serializer_class = serializers.VersionSerializer
 
     def get_queryset(self):
         page_id = self.kwargs.get('page')
-        history_id = self.kwargs.get('pk')
-        history = models.Page.history.filter(
+        version_id = self.kwargs.get('pk')
+        version = models.Page.history.filter(
             id=page_id
         ).filter(
-            history_id=history_id
+            history_id=version_id
         )
-        return history
+        return version
 
 
-class VersionSetView(generics.RetrieveAPIView):
+class SetCurrentVersionView(generics.RetrieveAPIView):
     serializer_class = serializers.VersionSerializer
+    permission_classes = (IsAdminUser, )
 
     def get_queryset(self):
         version_id = self.kwargs.get('pk')
-        selected_version = models.Page.history.get(history_id=version_id)
-        selected_version.instance.save_without_historical_record()
-        print(selected_version)
-        return selected_version
+        history_instance = models.Page.history.get(history_id=version_id)
+        history_instance.instance.save_without_historical_record()
+        current_version = models.Page.history.filter(
+            history_id=version_id
+        )
+        return current_version
