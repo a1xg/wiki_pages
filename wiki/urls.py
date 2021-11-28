@@ -4,18 +4,16 @@ from . import views
 
 urlpatterns = [
     path('create', views.PageCreateView.as_view()),
-    path('pages/list', views.PagesListView.as_view()),
-    path('pages/detail/<int:pk>', views.PageDetailView.as_view()),
+    path('pages/list', views.PageListView.as_view()),
+    path('pages/<int:pk>', views.PageDetailView.as_view()),
     path(
-        'pages/detail/<int:pk>/versions/list',
-        views.VersionsListView.as_view()
+        'pages/<int:pk>/versions/list',
+        views.VersionListView.as_view()
     ),
     path(
-        'pages/detail/<int:page>/versions/<int:pk>',
+        'pages/<int:page>/versions/<int:pk>',
         views.VersionDetailView.as_view()
     ),
-    path('pages/detail/<int:page>/versions/<int:pk>/set-current',
-         views.SetCurrentVersionView.as_view()
-    )
+    path('pages/<int:page>/versions/<int:pk>/set-current', views.SetCurrentVersionView.as_view())
 
 ]

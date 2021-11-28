@@ -16,11 +16,4 @@ class PageSerializer(serializers.ModelSerializer):
 class VersionSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Page.history.model
-        # fields = (
-        #    'id',
-        #    'history_id',
-        #    'text',
-        #    'created',
-        #    'history_date',
-        # )
         fields = '__all__'
