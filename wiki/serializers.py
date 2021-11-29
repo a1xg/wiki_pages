@@ -17,3 +17,7 @@ class VersionSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Page.history.model
         fields = '__all__'
+
+
+class SetVersionSerializer(serializers.Serializer):
+    history_id = serializers.IntegerField()
