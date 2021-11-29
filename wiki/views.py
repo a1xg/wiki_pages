@@ -78,8 +78,9 @@ class SetVersionView(generics.UpdateAPIView):
         serializer = self.get_serializer(data=request.data)
         if serializer.is_valid():
             page = self.get_object()
-            version = page.history.get(history_id=serializer.data["history_id"])
+            version = page.history.get(
+                history_id=serializer.data["history_id"]
+            )
             version.instance.save_without_historical_record()
-            return Response(status=200)
+            return Response(status=200, data=serializer.data)
         return Response(status=400)
-
