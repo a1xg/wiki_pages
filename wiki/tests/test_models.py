@@ -9,7 +9,6 @@ class PageModelTest(TestCase):
         self.assertEqual(expected_data['title'], page.title)
         self.assertEqual(expected_data['text'], page.text)
 
-
     def test_get_page(self):
         page = Page.objects.create(title='Test', text='Test')
         page1 = Page.objects.get(id=page.id)

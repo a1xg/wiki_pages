@@ -15,7 +15,12 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Page',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(
+                    auto_created=True,
+                    primary_key=True,
+                    serialize=False,
+                    verbose_name='ID'
+                )),
                 ('title', models.CharField(max_length=300)),
                 ('text', models.TextField(default='')),
                 ('created', models.DateTimeField(auto_now_add=True)),
@@ -27,11 +32,19 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='PageVersion',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(
+                    auto_created=True,
+                    primary_key=True,
+                    serialize=False,
+                    verbose_name='ID'
+                )),
                 ('title', models.CharField(max_length=300)),
                 ('text', models.TextField(default='')),
                 ('created', models.DateTimeField(auto_now_add=True)),
-                ('page', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='wiki.page')),
+                ('page', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE,
+                    to='wiki.page'
+                )),
             ],
             options={
                 'ordering': ['-pk'],
