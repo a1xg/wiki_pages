@@ -11,8 +11,8 @@
 * Superuser django will be created in docker-compose: 
   * username: **admin**, 
   * password: **admin**
-
-* Endpoints list:
+#### Endpoints list:
+   * `/api-auth/login/?next=/api/v1/pages/list` Login page
    * `/api/v1/create` Create a new page
    * `/api/v1/pages/list` Getting a list of created pages  
    * `/api/v1/pages/<int:pk>` Getting a specific page by id   
