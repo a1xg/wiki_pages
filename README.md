@@ -8,7 +8,7 @@
 ```docker-compose up```
 * The DRF-API server will be launched at http://localhost:8000/
 * Endpoints list:
-   /api/v1/create
+   `/api/v1/create`
    /api/v1/pages/list
    /api/v1/pages/<int:pk>
    /api/v1/pages/<int:pk>/versions/list
