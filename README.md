@@ -16,7 +16,7 @@
    * `/api/v1/pages/<int:pk>/versions/set-current` Setting the current version of a specific page, you need to specify the ID of the historical page
    
         
-* Unit tests will be run during the execution of the docker-compose script
+* Tests will be run during the execution of the docker-compose script
 * Superuser django will be created in docker-compose script: 
 username:admin, 
 password:admin
