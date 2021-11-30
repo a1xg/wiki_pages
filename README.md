@@ -9,7 +9,6 @@
 * The DRF-API server will be launched at http://localhost:8000/
 * Endpoints list:
    * `/api/v1/create` Create a new page
-   
    * `/api/v1/pages/list` Getting a list of created pages  
    * `/api/v1/pages/<int:pk>` Getting a specific page by id   
    * `/api/v1/pages/<int:pk>/versions/list` Getting a list of versions of a specific page by id   
@@ -23,6 +22,6 @@ username:admin,
 password:admin
 
 ## Postman API endpoint tests
-* Import the Postman collection from the [link](https://github.com/a1xg/wiki_pages/postman_collection/)
+* Import the Postman collection from the [link](https://github.com/a1xg/wiki_pages/tree/master/postman_collection/)
 * Create a new empty environment in Postman before running the collection
 * Run collection
