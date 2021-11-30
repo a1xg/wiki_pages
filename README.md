@@ -15,8 +15,8 @@
    * `/api/v1/pages/<int:page>/versions/<int:pk>`
    * `/api/v1/pages/<int:pk>/versions/set-current`
         
-* Unit tests will be run during the execution of the docker compose script
-* Superuser django will be created in docker compose script: 
+* Unit tests will be run during the execution of the docker-compose script
+* Superuser django will be created in docker-compose script: 
 username:admin, 
 password:admin
 
