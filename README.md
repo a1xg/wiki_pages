@@ -7,10 +7,10 @@
 #### Run docker-compose
 ```docker-compose up```
 * The Django server will be launched at http://127.0.0.1:8000/
-* Tests will be run during the execution of the docker-compose script
-* Superuser django will be created in docker-compose script: 
-username:admin, 
-password:admin
+* Tests will be run during the execution of the docker-compose
+* Superuser django will be created in docker-compose: 
+username:**admin**, 
+password:**admin**
 
 * Endpoints list:
    * `/api/v1/create` Create a new page
