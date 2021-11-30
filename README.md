@@ -6,7 +6,7 @@
 ```cd wiki_pages```
 #### Run docker-compose
 ```docker-compose up```
-* The DRF-API server will be launched at http://localhost:8000/api/v1/news/list
+* The DRF-API server will be launched at http://localhost:8000/
 * Unit tests will be run during the execution of the docker compose script
 * Superuser django will be created in docker compose script: 
 username:admin, 
