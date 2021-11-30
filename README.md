@@ -1,5 +1,7 @@
 ## Deploy
 
+#### Run console
+
 #### Copy the repository
 ```git clone https://github.com/a1xg/wiki_pages.git```
 #### Go to the root of the project
