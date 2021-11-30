@@ -49,7 +49,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'wiki_pages.wsgi.application'
-
+'''
+# local db
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -61,8 +62,8 @@ DATABASES = {
     }
 }
 
-# docker DB
 '''
+# docker DB
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -72,7 +73,7 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-'''
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.'
